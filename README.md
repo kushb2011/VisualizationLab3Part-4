@@ -4,8 +4,17 @@
 
 Group Submission: .
 
-Alex-- Bar Chart                                                                                                                                                               Alex-- Stack Bar Chart
-Hari-- Line Chart
-Hari-- Bubble Chart
+-- Interactive dashboard graph  -- Completed
+
+-- Alex-- Bar Chart -- Completed
+
+-- Alex-- Stack Bar Chart -- Completed
+
+-- Hari-- Line Chart -- Completed
+
+-- Hari-- Bubble Chart -- Completed
+
 Kush-- Multi Line Chart
+
 Mauricio-- Heatmap Chart
+
