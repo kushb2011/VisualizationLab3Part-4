@@ -4,8 +4,7 @@
 
 Group Submission: .
 
-Alex-- Bar Chart
-Alex-- Stack Bar Chart
+Alex-- Bar Chart                                                                                                                                                               Alex-- Stack Bar Chart
 Hari-- Line Chart
 Hari-- Bubble Chart
 Kush-- Multi Line Chart
