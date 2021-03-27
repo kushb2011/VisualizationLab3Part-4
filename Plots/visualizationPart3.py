@@ -14,6 +14,7 @@ df1 = pd.read_csv('../Datasets/CoronavirusTotal.csv')
 df2 = pd.read_csv('../Datasets/CoronaTimeSeries.csv')
 df3 = pd.read_csv('../Datasets/Olympic2016Rio.csv')
 df4 = pd.read_csv('../Datasets/Weather2014-15.csv')
+df5 = pd.read_csv('../Datasets/Weather2014-15.csv')
 
 app = dash.Dash()
 
@@ -54,11 +55,11 @@ data_linechart = [go.Scatter(x=df4['date'], y=df4['actual_max_temp'], mode='line
 
 # 4 Multi Line Chart - Kush Bhuva
 
-multiline_df = df2
-multiline_df['Date'] = pd.to_datetime(multiline_df['Date'])
-trace1_multiline = go.Scatter(x=multiline_df['Date'], y=multiline_df['Death'], mode='lines', name='Death')
-trace2_multiline = go.Scatter(x=multiline_df['Date'], y=multiline_df['Recovered'], mode='lines', name='Recovered')
-trace3_multiline = go.Scatter(x=multiline_df['Date'], y=multiline_df['Unrecovered'], mode='lines', name='Under Treatment')
+multiline_df = df5
+multiline_df['date'] = pd.to_datetime(multiline_df['date'])
+trace1_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_mean_temp'], mode='lines', name='actual_mean_temp')
+trace2_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_min_temp'], mode='lines', name='actual_min_temp')
+trace3_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_max_temp'], mode='lines', name='actual_max_temp')
 data_multiline = [trace1_multiline, trace2_multiline, trace3_multiline]
 
 # 5 Bubble chart - Hari Dhimal
@@ -139,16 +140,16 @@ app.layout = html.Div(children=[
                                       xaxis={'title': 'Month'}, yaxis={'title': 'Max Temperature'})
               }
               ),
-    html.Hr(style={'color': '#7FDBFF'}),
+   html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Multi Line chart', style={'color': '#df1e56'}),
     html.Div(
-        'This line chart represent the CoronaVirus death, recovered and under treatment cases of all reported cases in the given period.'),
+        'This line chart represent the Min, Mean and Max temperature at a certain day'),
     dcc.Graph(id='graph5',
               figure={
                   'data': data_multiline,
                   'layout': go.Layout(
-                      title='Corona Virus Death, Recovered and under treatment Cases From 2020-01-22 to 2020-03-17',
-                      xaxis={'title': 'Date'}, yaxis={'title': 'Number of cases'})
+                      title='Min, Mean, and Max Temperature',
+                      xaxis={'title': 'Date'}, yaxis={'title': 'Temperature'})
               }
               ),
     html.Hr(style={'color': '#7FDBFF'}),
